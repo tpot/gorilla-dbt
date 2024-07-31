@@ -4,9 +4,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "dbt run",
+            "label": "dbt build",
             "type": "shell",
-            "command": "dbt seed && dbt run",
+            "command": "dbt seed --project-dir ${workspaceFolder}/story && dbt run --project-dir ${workspaceFolder}/story",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -16,7 +16,7 @@
         {
             "label": "dbt test",
             "type": "shell",
-            "command": "dbt test",
+            "command": "dbt test --project-dir ${workspaceFolder}/story",
             "problemMatcher": [],
             "group": {
                 "kind": "test",
