@@ -1,0 +1,23 @@
+sources:
+  # Task event source
+  - name: event_task_csv
+    meta:
+      external_location: |
+        read_csv('{{ env_var("DBT_DATA_ROOT") }}/data_exp_*task*.csv',
+          normalize_names=True,
+          null_padding=True,
+          parallel=False,
+          union_by_name=True)
+    tables:
+      - name: stg_event_task
+  # Questionnaire event source
+  - name: event_quest_csv
+    meta:
+      external_location: |
+        read_csv('{{ env_var("DBT_DATA_ROOT") }}/data_exp_*questionnaire*.csv',
+          normalize_names=True,
+          null_padding=True,
+          parallel=False,
+          union_by_name=True)
+    tables:
+      - name: stg_event_quest
