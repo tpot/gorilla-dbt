@@ -1,3 +1,6 @@
+.direnv/
+.venv/
+
 data/story_materials.zip
 data/data_exp_*.csv
 data/item-conds.csv
