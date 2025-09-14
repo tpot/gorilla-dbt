@@ -1,0 +1,31 @@
+name: 'Build and test'
+
+'on':
+  push: {}
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-24.04
+    env:
+      UV_LINK_MODE: symlink    # Fixes nektos/act warnings
+
+    steps:
+      - name: 'Checkout repository'
+        uses: actions/checkout@v4
+
+      - name: 'Install uv'
+        uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+          prune-cache: false
+
+      - name: 'Set up Python'
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: '.python-version'
+
+      - name: 'Run dbt'
+        run: |
+          uv run dbt deps
+          uv run dbt seed
+          uv run dbt build
