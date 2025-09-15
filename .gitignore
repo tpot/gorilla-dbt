@@ -1,10 +1,15 @@
+# Python virtual envs
 .direnv/
 .venv/
 
+# Local data cache
 data/story_materials.zip
 data/data_exp_*.csv
 data/item-conds.csv
 
+# dbt files
 target/
 dbt_packages/
 logs/
+.user.yml
+dev.duckdb
