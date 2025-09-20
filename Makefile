@@ -14,5 +14,10 @@ $(addprefix data/,$(DATA_FILES)): data/story_materials.zip
 data/story_materials.zip:
 	wget -O data/$(notdir $@) $(STORY_MATERIALS_URL)
 
+# macOS
+act:
+	act -P ubuntu-24.04=myoung34/github-runner:ubuntu-noble \
+		--container-daemon-socket /var/run/docker.sock
+
 clean:
 	rm -f data/story_materials.zip $(addprefix data/,$(DATA_FILES))
