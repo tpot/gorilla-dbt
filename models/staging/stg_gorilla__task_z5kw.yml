@@ -1,0 +1,14 @@
+models:
+  - name: stg_gorilla__task_z5kw
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - participant_private_id
+              - event_index
+    columns:
+      - name: tree_node_key
+        data_tests:
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: = 'task-z5kw'
