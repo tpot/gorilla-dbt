@@ -1,6 +1,7 @@
 models:
   - name: stg_gorilla__task_z5kw
     data_tests:
+      - not_empty
       - dbt_utils.unique_combination_of_columns:
           arguments:
             combination_of_columns:
