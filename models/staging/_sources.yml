@@ -1,0 +1,13 @@
+sources:
+  - name: stg_event_task_lwe7
+    schema: source
+    tables:
+      - name: stg_event_task_lwe7
+  - name: stg_event_task_y5i7
+    schema: source
+    tables:
+      - name: stg_event_task_y5i7
+  - name: stg_event_task_z5kw
+    schema: source
+    tables:
+      - name: stg_event_task_z5kw
