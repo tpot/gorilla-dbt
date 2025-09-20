@@ -5,6 +5,9 @@ DATA_FILES=data_exp_4424-v9_task-lwe7.csv \
 	data_exp_4424-v9_task-z5kw.csv \
 	item-conds.csv
 
+data: $(addprefix data/,$(DATA_FILES))
+.PHONY: data
+
 $(addprefix data/,$(DATA_FILES)): data/story_materials.zip
 	unzip -o -d data -j $<
 

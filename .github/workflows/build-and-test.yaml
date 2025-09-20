@@ -24,6 +24,10 @@ jobs:
         with:
           python-version-file: '.python-version'
 
+      - name: 'Download data'
+        run: |
+          make data
+
       - name: 'Run dbt'
         run: |
           uv run dbt deps
