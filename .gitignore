@@ -13,3 +13,4 @@ dbt_packages/
 logs/
 .user.yml
 dev.duckdb
+dev.duckdb.wal
