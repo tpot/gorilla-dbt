@@ -4,3 +4,6 @@ templater = jinja
 
 [sqlfluff:templater:jinja]
 load_macros_from_path = macros
+
+[sqlfluff:indentation]
+indented_ctes = True
